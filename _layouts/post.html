@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<header class="secondary" style="background-image:linear-gradient(rgba(0, 0, 0, 0.75), rgba(224, 251, 252, 1)), url(/src/img/post_headers/{{ page.headerImg }})">
+  <h1>{{ page.title }}</h1>
+  <ul class="tags center">
+    {% for tag in page.tags %}
+      {% if tag != "all" %}
+        <li>{{ tag }}</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+  <time>{{ page.date | date: "%A, %B %e, %Y" }}</time>
+</header>
+
+<main>
+  <article>
+    {{ content }}
+    <hr />
+    <p>
+      Header Image courtesy of <a href="{{ page.imgHref }}" target="_blank">{{ page.imgCredit }}</a>
+    </p>
+  </article>
+</main>

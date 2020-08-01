@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post</title>
+  <script src="https://kit.fontawesome.com/bcc5189d73.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/src/css/style.css" />
+</head>
+<body>
+  <header class="primary">
+    <div class="join-community">
+      <a href="" class="join-btn">
+        <i class="fa fa-envelope-o"></i>
+        Join Our Community
+      </a>
+    </div>
+
+    <h1 class="logo">
+      <span>Internet<br />Science</span>
+      <img src="/src/img/me.svg" alt="" />
+      <span>with Kirk M.<br />(@saricden)</span>
+    </h1>
+
+    <div class="searchbox">
+      <i class="fa fa-search"></i>
+      <input type="search" placeholder="Lookit me I'm Mr. Meeseeks!" />
+    </div>
+    
+    {% include nav.html %}
+  </header>
+
+  {{ content }}
+
+  <footer class="primary">
+    <span>2020 Kirk M.</span>
+    <a href="https://github.com/saricden/saricden.github.io" target="_blank">
+      <i class="fa fa-github"></i>
+      View Source
+    </a>
+    <a href="" class="join-btn">
+      <i class="fa fa-envelope-o"></i>
+      Join Our Community
+    </a>
+  </footer>
+
+  <div class="modal open-haven">
+    <div>
+      <header>
+        <i class="fab fa-discord"></i>
+        Join Open Haven on Discord
+      </header>
+      <p>
+        Open Haven is our online community of creators, movers, and shakers. We'd love you to be apart of it. Submit the form below with a valid email address to receive your very own invite link.
+      </p>
+      <p>Upon submitting your email address you will be redirected to Mailchimp. Close that tab to come back here, and you should receive an email with your Discord link shortly. :)</p>
+      <form action="https://github.us17.list-manage.com/subscribe/post?u=5eac6f505e3e8035a92ed873b&amp;id=9977d2de2d" method="post" target="_blank">
+        <div class="control">
+          <label>Your Email</label>
+          <input type="email" id="oh-email" name="EMAIL" placeholder="you@yourdomain.com">
+        </div>
+        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+          <input type="text" name="b_5eac6f505e3e8035a92ed873b_9977d2de2d" tabindex="-1" value="">
+        </div>
+        <div class="btn-control">
+          <button type="submit" name="subscribe">
+            <i class="fa fa-check"></i>
+            Join Open Haven
+          </button>
+          <a href="" class="close-ohm">Maybe another time...</a>
+        </div>
+        <div id="loading-spinner" class="spinner">
+          <i class="fas fa-3x fa-sync fa-spin"></i>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/src/js/global.js"></script>
+</body>
+</html>

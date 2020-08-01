@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<main>
+  {% for post in site.tags[page.displayTag] %}
+    {% capture day %}{{ post.date | date: '%m%d%Y' }}{% endcapture %}
+    {% capture nday %}{{ post.next.date | date: '%m%d%Y' }}{% endcapture %}
+
+    {% if day != nday %}
+      <time class="list">{{ post.date | date: "%A, %B %e, %Y" }}</time>
+    {% endif %}
+
+    <a href="{{ post.permalink }}" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)), url(/src/img/post_headers/{{ post.headerImg }})" class="post">
+      <div>
+        <h1>{{ post.title }}</h1>
+        <ul class="tags">
+          {% for tag in post.tags %}
+            {% if tag != "all" %}
+              <li>{{ tag }}</li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+        <p>
+          {{ post.content | truncatewords: 25 }}
+        </p>
+      </div>
+      <i class="fa fa-chevron-right"></i>
+    </a>
+  {% endfor %}
+</main>
