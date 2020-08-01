@@ -2,7 +2,7 @@
 title: "JavaScript"
 permalink: /javascript
 layout: list
-tag: list
+category: list
 displayTag: javascript
 weight: 2
 ---

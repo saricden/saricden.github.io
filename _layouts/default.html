@@ -8,6 +8,11 @@
   <link rel="stylesheet" href="/src/css/style.css" />
 </head>
 <body>
+  <div class="searchbox">
+    <i class="fa fa-search"></i>
+    <input type="search" placeholder="Lookit me I'm Mr. Meeseeks!" />
+  </div>
+
   <header class="primary">
     <div class="join-community">
       <a href="" class="join-btn">
@@ -21,11 +26,6 @@
       <img src="/src/img/me.svg" alt="" />
       <span>with Kirk M.<br />(@saricden)</span>
     </h1>
-
-    <div class="searchbox">
-      <i class="fa fa-search"></i>
-      <input type="search" placeholder="Lookit me I'm Mr. Meeseeks!" />
-    </div>
     
     {% include nav.html %}
   </header>
@@ -69,13 +69,22 @@
           </button>
           <a href="" class="close-ohm">Maybe another time...</a>
         </div>
-        <div id="loading-spinner" class="spinner">
-          <i class="fas fa-3x fa-sync fa-spin"></i>
-        </div>
       </form>
     </div>
   </div>
 
+  <div class="search-results">
+    <div>
+      <span id="search-results-label">
+        Start typing to find blog posts...
+      </span>
+      <div id="search-results-list">
+
+      </div>
+    </div>
+  </div>
+
+  <script type="application/json" id="search-data">{% include post-feed.html %}</script>
   <script src="/src/js/global.js"></script>
 </body>
 </html>

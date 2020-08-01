@@ -84,6 +84,7 @@ h1.logo {
   box-sizing: border-box;
   padding: 2rem;
   font-size: 2.5rem;
+  margin-bottom: 3.7rem;
 
   transition: font-size 0.5s;
 }
@@ -119,6 +120,12 @@ h1.logo img {
 }
 
 .searchbox {
+  z-index: 9;
+  position: absolute;
+  top: 18rem;
+  left: 0;
+  right: 0;
+  width: calc(100% - 2rem);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -127,12 +134,16 @@ h1.logo img {
   border: solid 1px rgba(65, 34, 52, 0.5);
   border-radius: 2rem;
   overflow: hidden;
+  box-sizing: border-box;
 
-  transition: box-shadow 0.5s;
+  transition: box-shadow 0.5s, width 0.5s, top 0.5s, border-radius 0.5s;
 }
 
 .searchbox.active {
   box-shadow: 0 0 10px rgba(65, 34, 52, 0.5);
+  top: 0;
+  width: 100%;
+  border-radius: 0;
 }
 
 .searchbox i {
@@ -147,6 +158,49 @@ input[type="search"] {
   border: 0;
   width: 100%;
   outline: none;
+}
+
+.search-results {
+  z-index: 8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #FFF;
+  box-sizing: border-box;
+  padding-top: 5.7rem;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s, opacity 0.5s;
+}
+.search-results > div {
+  width: 100%;
+  max-width: 70rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 2rem;
+}
+.search-results > div span {
+  display: block;
+  font-size: 2rem;
+  text-align: center;
+}
+.search-results > div a {
+  display: block;
+  font-size: 2rem;
+  color: #FFF;
+  margin-bottom: 2rem;
+}
+.search-results > div a:last-of-type {
+  margin-bottom: 0;
+}
+
+.search-results.active {
+  visibility: visible;
+  opacity: 1;
 }
 
 header.primary nav a {
@@ -344,12 +398,6 @@ time.list {
   line-height: 1.75em;
 }
 
-.spinner {
-  display: none;
-  text-align: center;
-  padding: 2rem 0;
-}
-
 .control {
   padding: 1rem;
   box-sizing: border-box;
@@ -416,6 +464,10 @@ time.list {
   }
   h1.logo img {
     width: 5rem;
+  }
+
+  .searchbox {
+    top: 12.5rem;
   }
 
   header.secondary h1 {

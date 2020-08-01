@@ -1,0 +1,9 @@
+[
+  {% for post in site.categories.post %}
+    {
+      "title": "{{ post.title }}",
+      "snippet": "{{ post.content | truncatewords: 25 | strip_html | escape }}",
+      "href": "{{ post.permalink }}"
+    }{% if forloop.last == false %},{% endif %}
+  {% endfor %}
+]

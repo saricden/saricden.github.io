@@ -1,4 +1,4 @@
-{% assign navLinks = site.tags.list | sort: "weight" %}
+{% assign navLinks = site.categories.list | sort: "weight" %}
 
 <nav>
   {% for post in navLinks %}

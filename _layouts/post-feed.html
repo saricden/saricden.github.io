@@ -1,0 +1,12 @@
+{
+  "posts": [
+    {% for post in site.posts %}
+      {% if post.tag != "list" %}
+        {
+          "title": "{{ post.title }}",
+          "snippet": "{{ post.content | truncatewords: 25 | strip_html }}"
+        },
+      {% endif %}
+    {% endfor %}
+  ]
+}
