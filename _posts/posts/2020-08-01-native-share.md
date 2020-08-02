@@ -46,23 +46,26 @@ Add the following script to any JavaScript file being loaded at the end of your 
 ```javascript
 var shareBtn = document.getElementById('share-btn');
 var shareFallback = document.getElementById('share-fallback');
-if (navigator.share) {
-  // Supported, show the button
-  shareBtn.style.display = "block";
-  shareBtn.addEventListener('click', function() {
-    navigator.share({
-      title: shareBtn.getAttribute('data-title'),
-      url: shareBtn.getAttribute('data-url')
-    })
-    .then(() => {
-      console.log('Share success!');
-    })
-    .catch(console.error);
-  });
-}
-else {
-  // No bueno, show the link
-  shareFallback.style.display = "block";
+
+if (shareBtn && shareFallback) {
+  if (navigator.share) {
+    // Supported, show the button
+    shareBtn.style.display = "block";
+    shareBtn.addEventListener('click', function() {
+      navigator.share({
+        title: shareBtn.getAttribute('data-title'),
+        url: shareBtn.getAttribute('data-url')
+      })
+      .then(function() {
+        console.log('Share success!');
+      })
+      .catch(console.error);
+    });
+  }
+  else {
+    // No bueno, show the link
+    shareFallback.style.display = "block";
+  }
 }
 ```
 

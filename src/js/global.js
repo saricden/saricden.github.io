@@ -82,7 +82,7 @@ if (shareBtn && shareFallback) {
         title: shareBtn.getAttribute('data-title'),
         url: shareBtn.getAttribute('data-url')
       })
-      .then(() => {
+      .then(function() {
         console.log('Share success!');
       })
       .catch(console.error);
