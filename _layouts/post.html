@@ -20,5 +20,13 @@ layout: default
     <p>
       Header Image courtesy of <a href="{{ page.imgHref }}" target="_blank">{{ page.imgCredit }}</a>
     </p>
+    <button class="btn" id="share-btn" data-url="{{ page.permalink }}" data-title="{{ page.title }}">
+      <i class="fa fa-share-alt"></i>
+      Share this Post!
+    </button>
+    <div class="panel" id="share-fallback">
+      <header>Share this Post!</header>
+      <a href="https://saricden.github.io{{ page.permalink }}">https://saricden.github.io{{ page.permalink }}</a>
+    </div>
   </article>
 </main>

@@ -6,6 +6,9 @@ var closeOHMBtn = document.querySelector('.close-ohm');
 var searchResults = document.querySelector('.search-results');
 var searchResultsList = document.getElementById('search-results-list');
 var searchResultsLabel = document.getElementById('search-results-label');
+var shareBtn = document.getElementById('share-btn');
+var shareFallback = document.getElementById('share-fallback');
+
 var searchData = JSON.parse(document.getElementById('search-data').textContent);
 
 var focusSearch = function() {
@@ -68,3 +71,25 @@ searchDiv.addEventListener('click', focusSearch);
 searchInput.addEventListener('focus', addFocusClass);
 searchInput.addEventListener('keyup', updateSearchResults);
 searchInput.addEventListener('blur', removeFocusClass);
+
+if (shareBtn && shareFallback) {
+  if (navigator.share) {
+    // Supported, show the button
+    shareBtn.style.display = "block";
+    console.log(shareBtn.getAttribute('data-title'));
+    shareBtn.addEventListener('click', function() {
+      navigator.share({
+        title: shareBtn.getAttribute('data-title'),
+        url: shareBtn.getAttribute('data-url')
+      })
+      .then(() => {
+        console.log('Share success!');
+      })
+      .catch(console.error);
+    });
+  }
+  else {
+    // No bueno, show the link
+    shareFallback.style.display = "block";
+  }
+}

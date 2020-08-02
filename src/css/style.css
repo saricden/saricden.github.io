@@ -457,6 +457,39 @@ pre.highlight {
   overflow-x: scroll;
 }
 
+.btn {
+  display: block;
+  width: 100%;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  background-color: #FFF;
+  color: #000;
+  margin-top: 2rem;
+  border-radius: 2rem;
+  border: solid 1px #CCC;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-size: 2rem;
+  outline: none;
+}
+
+.panel {
+  font-size: 2rem;
+  background-color: rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  margin-top: 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.panel header {
+  margin-bottom: 1rem;
+}
+
+#share-fallback,
+#share-btn {
+  display: none;
+}
+
 @media (max-width: 700px) {
   main {
     padding: 0 1rem;
