@@ -450,6 +450,13 @@ time.list {
   color: rgba(0, 0, 0, 0.75);
 }
 
+pre.highlight {
+  font-size: 2rem;
+  box-sizing: border-box;
+  padding: 2rem;
+  overflow-x: scroll;
+}
+
 @media (max-width: 700px) {
   main {
     padding: 0 1rem;

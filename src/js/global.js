@@ -8,8 +8,6 @@ var searchResultsList = document.getElementById('search-results-list');
 var searchResultsLabel = document.getElementById('search-results-label');
 var searchData = JSON.parse(document.getElementById('search-data').textContent);
 
-console.log(searchData);
-
 var focusSearch = function() {
   searchInput.focus();
 };

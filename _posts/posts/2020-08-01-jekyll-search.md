@@ -22,8 +22,8 @@ In order to have data for our search to read, we're going to be creating a JSON 
 
 Create a new file in the `_includes` directory, and name it `post-feed.html`. We're going to format this as JSON, then inject the text into a `<script>` tag that can be read on every page we want to show our search on.
 
-```liquid
 {% raw %}
+```liquid
 [
   {% for post in site.tags.post %}
     {
@@ -32,8 +32,8 @@ Create a new file in the `_includes` directory, and name it `post-feed.html`. We
     }{% if forloop.last == false %},{% endif %}
   {% endfor %}
 ]
-{% endraw %}
 ```
+{% endraw %}
 
 Note these specifics pertain to my website, you'll likely want to modify the loop above such that it's iterating over the posts you want to display in your search.
 
@@ -43,11 +43,11 @@ Next, we want to take our JSON object, output it somewhere in our HTML, then acc
 
 To output the JSON I added the following to the bottom of my default layout:
 
-```html
 {% raw %}
+```html
 <script type="application/json" id="search-data">{% include post-feed.html %}</script>
-{% endraw %}
 ```
+{% endraw %}
 
 Then, in my JavaScript file, I load in the output JSON like so:
 
