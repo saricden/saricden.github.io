@@ -7,6 +7,7 @@ layout: post
 headerImg: "mick-haupt-eQ2Z9ay9Wws-unsplash.jpg"
 imgCredit: "Mick Haupt via Unsplash"
 imgHref: "https://unsplash.com/photos/eQ2Z9ay9Wws"
+youtubeURL: "https://www.youtube.com/embed/m99f-U2xzcE"
 ---
 In this tutorial, we'll be looking at how to setup a "spotlight search" using plain ol' JavaScript that integrates with a JekyllRB blog.
 

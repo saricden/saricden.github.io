@@ -15,6 +15,14 @@ layout: default
 
 <main>
   <article>
+    {% if page.youtubeURL %}
+      <div class="panel marbottom">
+        <header>If you'd prefer, there is a video version of this tutorial available:</header>
+        <div class="video-container">
+          <iframe src="{{ page.youtubeURL }}?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    {% endif %}
     {{ content }}
     <hr />
     <p>

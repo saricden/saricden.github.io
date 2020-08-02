@@ -489,8 +489,26 @@ pre.highlight {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+.panel.marbottom {
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
 .panel header {
   margin-bottom: 1rem;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 #share-fallback,
