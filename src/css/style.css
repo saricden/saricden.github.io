@@ -80,6 +80,10 @@ main {
   margin: 0 auto;
 }
 
+main {
+  min-height: calc(100vh - 44.52rem);
+}
+
 h1.logo {
   display: flex;
   flex-direction: row;
