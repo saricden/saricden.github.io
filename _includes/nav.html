@@ -6,18 +6,18 @@
       <a href="{{ post.permalink }}" class="active">
         {{ post.title }}
         {% if site.tags[post.displayTag].size %}
-          - {{ site.tags[post.displayTag].size }}
+          ({{ site.tags[post.displayTag].size }})
         {% else %}
-          - 0
+          (0)
         {% endif %}
       </a>
     {% else %}
       <a href="{{ post.permalink }}">
         {{ post.title }}
         {% if site.tags[post.displayTag].size %}
-          - {{ site.tags[post.displayTag].size }}
+          ({{ site.tags[post.displayTag].size }})
         {% else %}
-          - 0
+          (0)
         {% endif %}
       </a>
     {% endif %}

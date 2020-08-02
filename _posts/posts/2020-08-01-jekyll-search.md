@@ -28,7 +28,8 @@ Create a new file in the `_includes` directory, and name it `post-feed.html`. We
   {% for post in site.tags.post %}
     {
       "title": "{{ post.title }}",
-      "snippet": "{{ post.content | truncatewords: 25 | strip_html }}"
+      "snippet": "{{ post.content | truncatewords: 25 | strip_html }}",
+      "href": "{{ post.permalink }}"
     }{% if forloop.last == false %},{% endif %}
   {% endfor %}
 ]
@@ -55,4 +56,71 @@ Then, in my JavaScript file, I load in the output JSON like so:
 var searchData = JSON.parse(document.getElementById('search-data').textContent);
 ```
 
-**Step 3: 
+**Step 3: Create Some Search Elements**
+
+Now we're going to create the HTML elements that will house our search. The ones on my own site are a bit fancier, and this is certainly an area to get creative with, but for the sake of our tutorial we're going to keep ours pretty simple.
+
+```html
+<input type="search" id="search-bar" placeholder="Type here to search." />
+
+<div id="search-results"></div>
+```
+
+You'll definitely want to style them up and make them pretty, but this is the skeleton of our search ready to go!
+
+**Step 4: Write a Search Function**
+
+You're almost there, keep going!
+
+In this step, we'll put everything we have so far together into the function that powers our search.
+
+```javascript
+// First, parse the JSON we've thrown into the DOM
+var searchData = JSON.parse(document.getElementById('search-data').textContent);
+
+// Create a reference to our search results
+var searchResultsList = document.getElementById('search-results');
+
+// And one for our search input
+var searchInput = document.getElementById('search-bar');
+
+var updateSearchResults = function(e) {
+  // Make the query case-insensitive
+  var q = e.target.value.toLowerCase();
+
+  // Make sure it isn't empty
+  if (q.trim() !== '') {
+
+    // Empty the search results DOM element
+    searchResultsList.innerHTML = "";
+
+    // Loop over all the items in our JSON blob
+    for (let i in searchData) {
+      var searchItem = searchData[i];
+
+      // Check if the title or snippet includes our query string
+      if (searchItem.title.toLowerCase().includes(q) || searchItem.snippet.toLowerCase().includes(q)) {
+
+        // If it does, append a link to our results element
+        var searchLink = document.createElement('a');
+        var searchContent = document.createTextNode(searchItem.title);
+
+        searchLink.setAttribute('href', searchItem.href);
+        searchLink.appendChild(searchContent);
+        searchResultsList.appendChild(searchLink);
+      }
+    }
+  }
+};
+
+// Finally, bind our new function to the search input element
+searchInput.addEventListener('keyup', updateSearchResults);
+```
+
+Now, it should be noted that *without a doubt*, there are more optimal solutions to this. But for the sake of simplicity, I'm going with this relatively straight-forward solution.
+
+And with that, we should be done. Fire up your blog with `jekyll serve` if you haven't already, and take it for a spin!
+
+As always, happy hacking!
+
+Love Kirk M. (@saricden)
