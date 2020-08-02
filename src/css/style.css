@@ -7,6 +7,8 @@ body {
 body {
   color: #000;
   background-color: #E0FBFC;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
 }
 
 body.noscroll {
@@ -63,6 +65,8 @@ footer.primary span {
 
 h1 {
   margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
 }
 
 h1.logo,
