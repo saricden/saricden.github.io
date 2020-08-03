@@ -247,6 +247,8 @@ header.primary nav a.active {
   box-shadow: 0 0 15px rgba(65, 34, 52, 0.75);
   color: #FFF;
   background-size: cover;
+  background-position: center;
+  /* background-attachment: fixed; */
 }
 
 .post > div {

@@ -21,7 +21,7 @@ layout: default
           {% endfor %}
         </ul>
         <p>
-          {{ post.content | truncatewords: 25 }}
+          {{ post.content | truncatewords: 25 | strip_html | escape }}
         </p>
       </div>
       <i class="fa fa-chevron-right"></i>
