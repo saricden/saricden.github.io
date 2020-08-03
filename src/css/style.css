@@ -248,7 +248,7 @@ header.primary nav a.active {
   color: #FFF;
   background-size: cover;
   background-position: center;
-  /* background-attachment: fixed; */
+  /* background-attachment: fixed;  */
 }
 
 .post > div {
