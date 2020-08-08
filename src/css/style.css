@@ -348,6 +348,14 @@ article p:first-of-type::first-letter {
   font-size: 5rem;
 }
 
+article ul {
+  font-size: 2rem;
+}
+
+article blockquote p {
+  font-size: 3rem;
+}
+
 time.list {
   display: block;
   text-align: center;
