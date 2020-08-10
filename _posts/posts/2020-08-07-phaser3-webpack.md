@@ -424,7 +424,7 @@ Lastly, we need to `import` our `main.css` file inside our JavaScript file (if t
 So open `src/game.js` and add this line to the very top of the file:
 
 ```javascript
-import style from "main.css";
+import style from "./main.css";
 
 // Any other JS you had here from earlier testing...
 ```
@@ -568,9 +568,11 @@ module.exports = {
       filename: "[name].css",
       chunkFilename: "[id].css"
     }),
-    new CopyWebpackPlugin([
-      { from: './src/assets', to: 'assets' }
-    ])
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: './src/assets', to : 'assets' }
+      ]
+    })
   ]
 };
 ```
@@ -591,7 +593,7 @@ import GameScene from './scenes/GameScene';
 
 const canvas = document.getElementById('game-canvas');
 const config = {
-  type: Phaser.AUTO,
+  type: Phaser.WEB_GL,
   width: 400,
   height: 300,
   canvas,
