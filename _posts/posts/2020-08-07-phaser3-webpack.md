@@ -292,7 +292,7 @@ With all our dependencies freshly installed, we now have to work on a few config
   // ... The name, version, etc. of your package.json file.
 
   "scripts": {
-    "start": "webpack-dev-server --mode development --entry ./src/game.js --open",
+    "start": "webpack serve --mode development --entry ./src/game.js",
     "build": "webpack --mode production --entry ./src/game.js --output ./dist/game.js",
     "dev": "webpack --mode development --entry ./src/game.js --output ./dist/game.js"
   },
@@ -307,7 +307,7 @@ This gives us a few new functions we can run within our project:
 npm run start
 ```
 
-Will startup our handy dandy dev server, and open our game in a new tab&#42; once ready.
+Will startup our handy dandy dev server. After running this command navigate to `localhost:8080`.
 
 ```bash
 npm run build
