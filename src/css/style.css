@@ -533,9 +533,6 @@ pre.highlight {
 
 .res-img img {
   width: 100%;
-  flex: 1;
-  flex-grow: 0;
-  flex-shrink: 1;
 }
 
 #share-fallback,
