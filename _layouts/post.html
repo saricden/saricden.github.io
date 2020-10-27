@@ -25,9 +25,11 @@ layout: default
     {% endif %}
     {{ content }}
     <hr />
-    <p>
-      Header Image courtesy of <a href="{{ page.imgHref }}" target="_blank">{{ page.imgCredit }}</a>
-    </p>
+    {% if page.imgCredit %}
+      <p>
+        Header Image courtesy of <a href="{{ page.imgHref }}" target="_blank">{{ page.imgCredit }}</a>
+      </p>
+    {% endif %}
     <button class="btn" id="share-btn" data-url="{{ page.permalink }}" data-title="{{ page.title }}">
       <i class="fa fa-share-alt"></i>
       Share this Post!
