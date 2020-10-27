@@ -329,6 +329,7 @@ article {
 article p {
   font-size: 2rem;
   line-height: 1.75em;
+  word-wrap: break-word;
 }
 
 article a {
@@ -351,6 +352,7 @@ article p:first-of-type::first-letter {
 article ul,
 article ol {
   font-size: 2rem;
+  word-wrap: break-word;
 }
 
 article blockquote p {
