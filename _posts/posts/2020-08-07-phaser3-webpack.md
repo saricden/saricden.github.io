@@ -586,7 +586,7 @@ Well, now that we've installed and set everything up, why don't we make a quick 
 First, let's edit our `src/game.js` and add the following:
 
 ```javascript
-import style from './main.css';
+import './main.css';
 import Phaser, {Game} from 'phaser';
 import BootScene from './scenes/BootScene';
 import GameScene from './scenes/GameScene';
