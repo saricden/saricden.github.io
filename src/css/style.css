@@ -529,7 +529,9 @@ pre.highlight {
   justify-content: center;
 }
 
-.res-img {
+.res-img img {
+  width: 100%;
+  flex: 1;
   flex-grow: 0;
   flex-shrink: 1;
 }
